@@ -3,8 +3,7 @@ import { v4 as uuidv4 } from 'uuid';
 import dotenv from 'dotenv';
 import { ServerError, SuccessResponse, ValidationError, OtherSuccessResponse, NotFoundError, CreationSuccessResponse, BadRequestError, logger } from '../common/index.js';
 import {
-	default_delete_status, default_status, true_status, false_status, paginate, tag_root, email_templates, return_all_letters_uppercase,
-	anonymous, 
+	default_delete_status, default_status, true_status, false_status, paginate, tag_root, email_templates, return_all_letters_uppercase, anonymous, 
 } from '../config/config.js';
 import db from "../models/index.js";
 import { deleteImage } from '../middleware/uploads.js';
@@ -569,9 +568,9 @@ export async function addTeam(req, res) {
 						center_unique_id: center_unique_id || payload.center_unique_id,
 						title: payload.title,
 						fullname: payload.fullname,
-						email: payload.email,
+						email: payload.email ? payload.email : null,
 						alt_email: payload.alt_email ? payload.alt_email : null,
-						phone_number: payload.phone_number,
+						phone_number: payload.phone_number ? payload.phone_number : null,
 						alt_phone_number: payload.alt_phone_number ? payload.alt_phone_number : null,
 						qualifications: payload.qualifications ? payload.qualifications : null,
 						profile_link: payload.profile_link ? payload.profile_link : null,
@@ -610,9 +609,9 @@ export async function updateTeamDetails(req, res) {
 					{
 						title: payload.title,
 						fullname: payload.fullname,
-						email: payload.email,
+						email: payload.email ? payload.email : null,
 						alt_email: payload.alt_email ? payload.alt_email : null,
-						phone_number: payload.phone_number,
+						phone_number: payload.phone_number ? payload.phone_number : null,
 						alt_phone_number: payload.alt_phone_number ? payload.alt_phone_number : null,
 						qualifications: payload.qualifications ? payload.qualifications : null,
 						profile_link: payload.profile_link ? payload.profile_link : null,

@@ -86,18 +86,18 @@ export const teams_rules = {
 			.bail()
 			.isString().isLength({ min: 3, max: 300 })
 			.withMessage("Invalid length (3 - 300) characters"),
-		check('email', "Email is required")
-			.exists({ checkNull: true, checkFalsy: true })
+		check('email')
+			.optional({ checkFalsy: false })
 			.bail()
 			.isEmail()
 			.withMessage('Invalid email format'),
-		check('alt_email', "Email is required")
-			.exists({ checkNull: true, checkFalsy: true })
+		check('alt_email')
+			.optional({ checkFalsy: false })
 			.bail()
 			.isEmail()
 			.withMessage('Invalid email format'),
-		check('phone_number', "Phone Number is required")
-			.exists({ checkNull: true, checkFalsy: true })
+		check('phone_number')
+			.optional({ checkFalsy: false })
 			.bail()
 			.isMobilePhone()
 			.withMessage("Invalid phone number"),
