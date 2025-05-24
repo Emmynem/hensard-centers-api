@@ -79,8 +79,8 @@ export const teams_rules = {
 		check('title', "Title is required")
 			.exists({ checkNull: true, checkFalsy: true })
 			.bail()
-			.isString().isLength({ min: 2, max: 50 })
-			.withMessage("Invalid length (2 - 50) characters"),
+			.isString().isLength({ min: 2, max: 200 })
+			.withMessage("Invalid length (2 - 200) characters"),
 		check('fullname', "Fullname is required")
 			.exists({ checkNull: true, checkFalsy: true })
 			.bail()
