@@ -4,7 +4,7 @@ import helmet from "helmet";
 import fileMiddleware from 'express-multipart-file-parser';
 import { SuccessResponse } from './common/index.js';
 import logger from "./common/logger.js";
-import { hsdc_header_key, hsdc_header_token, primary_domain } from './config/config.js';
+import { admin_domain, hsdc_header_key, hsdc_header_token, primary_domain } from './config/config.js';
 import morganMiddleware from "./middleware/morgan.js";
 import db from "./models/index.js";
 import { createApiKeys, createAppDefaults, createCenters } from './config/default.config.js';
@@ -34,7 +34,7 @@ const app = express();
 
 const appWhitelist = [
 	primary_domain, 
-	"https://hcecr.hensarduniversity.edu.ng",
+	admin_domain,
 	"http://localhost", 
 	"http://localhost:80", 
 	"http://localhost:3000", 
