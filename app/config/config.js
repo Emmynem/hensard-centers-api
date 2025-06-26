@@ -8,8 +8,8 @@ export const squad_sandbox_verify_payment_url = "https://sandbox-api-d.squadco.c
 export const squad_live_verify_payment_url = "https://api-d.squadco.com/transaction/verify/";
 export const primary_domain = "https://hcecr.org";
 export const admin_domain = "https://admin.hcecr.org";
-export const mailer_url = "https://api.mailer.xnyder.com";
-export const clouder_url = "https://api.clouder.xnyder.com";
+export const mailer_url = "https://mailerapi.xnyder.com";
+export const clouder_url = "https://clouderapi.xnyder.com";
 export const default_path = "hsdc/";
 
 // Password options
